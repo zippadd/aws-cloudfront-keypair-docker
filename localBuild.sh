@@ -1,1 +1,1 @@
-docker build -t aws-serverless-node-docker .
+docker build -t aws-cloudfront-keypair-docker .
