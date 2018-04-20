@@ -39,7 +39,7 @@ export ssmParamName
 export privateKey
 cat "/regions" | parallel --delay 1 --env ssmParamName --env privateKey --no-notice 'aws configure set region {} \
   && echo {} \
-  && aws ssm put-parameter --name "$ssmParamName" --description "Cloudfront KeyPair Private Key PKCS8 (without header/footer)" --value "$privateKey" --type SecureString'
+  && aws ssm put-parameter --name "$ssmParamName" --description "Cloudfront KeyPair Private Key PKCS1" --value "$privateKey" --type SecureString'
 #if [ "$keyId" != "" ]
 #then
 #  echo "Error! Verification did not succeed. Review the container, script, and inputs."
